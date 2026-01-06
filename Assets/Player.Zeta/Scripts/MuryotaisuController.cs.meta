@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 0ec9bb896a697864dbb7ffe898debea8
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187402
+  packageName: Muryotaisu
+  packageVersion: 1.0
+  assetPath: Assets/Mryotaisu/Scripts/MuryotaisuController.cs
+  uploadId: 412526

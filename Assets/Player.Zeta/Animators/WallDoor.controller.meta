@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0bcb892157eacc942bc51ec9c8434137
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187402
+  packageName: Muryotaisu
+  packageVersion: 1.0
+  assetPath: Assets/Mryotaisu/Animators/WallDoor.controller
+  uploadId: 412526

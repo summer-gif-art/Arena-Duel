@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: cf668fee82e1dd1468b72ccb8725dfc0
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187402
+  packageName: Muryotaisu
+  packageVersion: 1.0
+  assetPath: Assets/Mryotaisu/Animators/Walk.anim
+  uploadId: 412526

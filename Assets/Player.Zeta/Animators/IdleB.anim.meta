@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b1e78c077cc2bc5418c15d74c26f211a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187402
+  packageName: Muryotaisu
+  packageVersion: 1.0
+  assetPath: Assets/Mryotaisu/Animators/IdleB.anim
+  uploadId: 412526

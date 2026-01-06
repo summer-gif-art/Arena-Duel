@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d28b04ff39b93f44c8f5d0733c5944fc
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187402
+  packageName: Muryotaisu
+  packageVersion: 1.0
+  assetPath: Assets/Mryotaisu/Prefabs/LevelColumn.prefab
+  uploadId: 412526

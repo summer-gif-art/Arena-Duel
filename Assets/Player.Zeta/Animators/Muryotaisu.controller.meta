@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 54a83325115ce584ea067268c4a12301
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 187402
+  packageName: Muryotaisu
+  packageVersion: 1.0
+  assetPath: Assets/Mryotaisu/Animators/Muryotaisu.controller
+  uploadId: 412526
