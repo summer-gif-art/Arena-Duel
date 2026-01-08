@@ -1,30 +1,53 @@
 using UnityEngine;
 
-public class WaterDamage : MonoBehaviour
+public class WaterKillZone : MonoBehaviour
 {
-    [Header("Settings")]
-    public int damageAmount = 100; // Set to 100 for instant kill
-    public bool instantKill = true;
-
-    // This function runs automatically when something enters the Trigger
-    private void OnTriggerEnter(Collider other)
+    [Header("Respawn Settings")]
+    public Transform spawnPoint;
+    public int drowningDamage = 30;
+    
+    [Header("Visual Effects")]
+    public GameObject splashEffect; // Optional: water splash particle
+    
+    void OnTriggerEnter(Collider other)
     {
-        // 1. Check if it's the Player
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Player fell in water!");
-            // Call your player's damage function here
-            // Example: other.GetComponent<PlayerHealth>().TakeDamage(damageAmount);
+            HandlePlayerFall(other);
         }
-        
-        // 2. Check if it's an Enemy
         else if (other.CompareTag("Enemy"))
         {
-            Debug.Log("Enemy fell in water!");
-            // Example: other.GetComponent<EnemyHealth>().TakeDamage(damageAmount);
+            // Enemies also die in water
+            Destroy(other.gameObject);
+        }
+    }
+    
+    void HandlePlayerFall(Collider player)
+    {
+        PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
+        CharacterController controller = player.GetComponent<CharacterController>();
+        
+        if (playerHealth != null && spawnPoint != null)
+        {
+            // Take drowning damage
+            playerHealth.TakeDamage(drowningDamage);
             
-            // Optional: Destroy enemy immediately to save performance
-            // Destroy(other.gameObject); 
+            // Spawn splash effect if assigned
+            if (splashEffect != null)
+            {
+                Instantiate(splashEffect, player.transform.position, Quaternion.identity);
+            }
+            
+            // Respawn player at spawn point
+            if (controller != null)
+            {
+                controller.enabled = false; // Disable to teleport
+                player.transform.position = spawnPoint.position;
+                player.transform.rotation = spawnPoint.rotation;
+                controller.enabled = true; // Re-enable
+            }
+            
+            Debug.Log("Player fell in water! Took damage and respawned.");
         }
     }
 }
