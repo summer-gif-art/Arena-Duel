@@ -7,7 +7,7 @@
     <list default="true" id="3bb93ce0-0e42-4413-a88e-5f40cfe67fde" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Arena-Duel/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arena-Duel/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Map.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Map.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/KillerWater.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/KillerWater.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -112,6 +112,9 @@
       <workItem from="1767736938170" duration="61000" />
       <workItem from="1767750497944" duration="2971000" />
       <workItem from="1767831920959" duration="3936000" />
+      <workItem from="1767925074333" duration="463000" />
+      <workItem from="1770072095133" duration="291000" />
+      <workItem from="1770073117147" duration="826000" />
     </task>
     <servers />
   </component>
