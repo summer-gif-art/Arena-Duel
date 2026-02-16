@@ -6,8 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="3bb93ce0-0e42-4413-a88e-5f40cfe67fde" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Arena-Duel/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arena-Duel/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/Skeletons_demo/models/Materials/DS_skeleton_standard.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemy/Skeletons_demo/models/Materials/DS_skeleton_standard.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/Skeletons_demo/models/Materials/DemoEquipment.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemy/Skeletons_demo/models/Materials/DemoEquipment.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Scripts/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Player.Zeta/Scripts/PlayerHealth.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Map.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Map.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/DefaultVolumeProfile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/DefaultVolumeProfile.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Ui/PlayerPotrait.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ui/PlayerPotrait.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +28,10 @@
     <setting file="file://$PROJECT_DIR$/Assets/Player.Zeta/Scripts/PlayerHealth.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/KillerWater.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/EnemySelection.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@7652a5c7e246/Shaders/Lit.shader" root0="SKIP_HIGHLIGHTING" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -115,12 +125,20 @@
       <workItem from="1767925074333" duration="463000" />
       <workItem from="1770072095133" duration="291000" />
       <workItem from="1770073117147" duration="826000" />
+      <workItem from="1770413847624" duration="183000" />
+      <workItem from="1770414784928" duration="3453000" />
+      <workItem from="1770419251193" duration="226000" />
+      <workItem from="1770985516698" duration="9419000" />
+      <workItem from="1771109887372" duration="124000" />
+      <workItem from="1771112881473" duration="63000" />
+      <workItem from="1771113054016" duration="2639000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityProjectDiscoverer">
     <option name="hasUnityReference" value="true" />

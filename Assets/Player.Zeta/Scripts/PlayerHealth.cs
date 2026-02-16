@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
-using TMPro;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -8,41 +6,42 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealth = 100;
     private int currentHealth;
     
-    [Header("Power Level System")]
+    [Header("Level System")]
     public int currentPowerLevel = 1;
-    public int maxPowerLevel = 3;
-    public int healthThresholdForLevelUp = 50; // HP needed to level up
     
-    [Header("Power Level Bonuses")]
-    public float[] damageMultipliers = { 1f, 1.5f, 2f }; // Level 1, 2, 3 damage
-    public float[] sizeMultipliers = { 1f, 1.2f, 1.5f };   // Level 1, 2, 3 size
-    public Color[] powerColors = { Color.white, Color.yellow, Color.red }; // Level colors
+    [Header("Visual Feedback")]
+    public GameObject deathEffectPrefab;
+    public float hitFlashDuration = 0.1f;
+    public Color hitFlashColor = Color.red;
     
-    [Header("UI References")]
-    public Image healthBarFill;
-    public TextMeshProUGUI hpText;
-    public TextMeshProUGUI powerLevelText;
-    public Image playerPortrait;
+    [Header("Respawn")]
+    public Transform respawnPoint;
+    public bool autoRespawn = false;
+    public float respawnDelay = 3f;
     
     private Renderer playerRenderer;
-    private Vector3 originalScale;
-    private PlayerCombat playerCombat;
+    private Color originalColor;
+    private bool isDead = false;
+    private CharacterController controller;
     
     void Start()
     {
         currentHealth = maxHealth;
+        controller = GetComponent<CharacterController>();
         playerRenderer = GetComponentInChildren<Renderer>();
-        originalScale = transform.localScale;
-        playerCombat = GetComponent<PlayerCombat>();
         
-        UpdateUI();
-        UpdatePowerLevel();
+        if (playerRenderer != null)
+        {
+            originalColor = playerRenderer.material.color;
+        }
         
-        Debug.Log("Player Health: " + currentHealth);
+        Debug.Log("Player spawned with " + currentHealth + " HP");
     }
     
     public void TakeDamage(int damage)
     {
+        if (isDead) return;
+        
         currentHealth -= damage;
         
         if (currentHealth < 0)
@@ -50,9 +49,14 @@ public class PlayerHealth : MonoBehaviour
             currentHealth = 0;
         }
         
-        Debug.Log("Player took " + damage + " damage! Health: " + currentHealth);
+        Debug.Log("Player took " + damage + " damage! Health: " + currentHealth + "/" + maxHealth);
         
-        UpdateUI();
+        // Visual feedback - flash red
+        StartCoroutine(HitFlash());
+        
+        // Trigger damage event
+        GameEvents.PlayerDamaged(damage);
+        GameEvents.PlayerHealthChanged(currentHealth);
         
         if (currentHealth <= 0)
         {
@@ -62,6 +66,8 @@ public class PlayerHealth : MonoBehaviour
     
     public void Heal(int amount)
     {
+        if (isDead) return;
+        
         currentHealth += amount;
         
         if (currentHealth > maxHealth)
@@ -69,103 +75,113 @@ public class PlayerHealth : MonoBehaviour
             currentHealth = maxHealth;
         }
         
-        Debug.Log("Player healed " + amount + "! Health: " + currentHealth);
+        Debug.Log("Player healed " + amount + "! Health: " + currentHealth + "/" + maxHealth);
         
-        UpdateUI();
-        CheckPowerLevelUp();
+        GameEvents.PlayerHealthChanged(currentHealth);
     }
     
-    void CheckPowerLevelUp()
+    System.Collections.IEnumerator HitFlash()
     {
-        // Check if player has enough HP to level up
-        int newLevel = 1;
-        
-        if (currentHealth >= healthThresholdForLevelUp * 2)
-        {
-            newLevel = 3; // Max level
-        }
-        else if (currentHealth >= healthThresholdForLevelUp)
-        {
-            newLevel = 2;
-        }
-        
-        if (newLevel > currentPowerLevel && newLevel <= maxPowerLevel)
-        {
-            currentPowerLevel = newLevel;
-            UpdatePowerLevel();
-            Debug.Log("POWER UP! Level " + currentPowerLevel);
-        }
-    }
-    
-    void UpdatePowerLevel()
-    {
-        int levelIndex = currentPowerLevel - 1;
-        
-        // Update size
-        if (originalScale != Vector3.zero)
-        {
-            transform.localScale = originalScale * sizeMultipliers[levelIndex];
-        }
-        
-        // Update color
         if (playerRenderer != null)
         {
-            playerRenderer.material.color = powerColors[levelIndex];
-        }
-        
-        // Update damage multiplier in combat script
-        if (playerCombat != null)
-        {
-            playerCombat.damageMultiplier = damageMultipliers[levelIndex];
-        }
-        
-        // Update UI
-        if (powerLevelText != null)
-        {
-            powerLevelText.text = "LVL " + currentPowerLevel;
-            powerLevelText.color = powerColors[levelIndex];
-        }
-        
-        if (playerPortrait != null)
-        {
-            playerPortrait.color = powerColors[levelIndex];
-        }
-    }
-    
-    void UpdateUI()
-    {
-        // Update health bar fill
-        if (healthBarFill != null)
-        {
-            healthBarFill.fillAmount = (float)currentHealth / maxHealth;
-        }
-        
-        // Update HP text
-        if (hpText != null)
-        {
-            hpText.text = "HP: " + currentHealth + " / " + maxHealth;
+            playerRenderer.material.color = hitFlashColor;
+            yield return new WaitForSeconds(hitFlashDuration);
+            playerRenderer.material.color = originalColor;
         }
     }
     
     void Die()
     {
-        Debug.Log("Player died!");
+        if (isDead) return;
+        isDead = true;
         
-        // Disable controls
-        GetComponent<PlayerMovement>().enabled = false;
+        Debug.Log("Player has died!");
         
-        if (playerCombat != null)
+        // Spawn death effect if assigned
+        if (deathEffectPrefab != null)
         {
-            playerCombat.enabled = false;
+            Instantiate(deathEffectPrefab, transform.position, Quaternion.identity);
         }
         
         // Trigger death event
         GameEvents.PlayerDeath();
+        
+        // Handle respawn or game over
+        if (autoRespawn && respawnPoint != null)
+        {
+            StartCoroutine(RespawnAfterDelay());
+        }
+        else
+        {
+            // Disable player
+            gameObject.SetActive(false);
+        }
     }
     
-    // Public method to get current damage multiplier
-    public float GetDamageMultiplier()
+    System.Collections.IEnumerator RespawnAfterDelay()
     {
-        return damageMultipliers[currentPowerLevel - 1];
+        yield return new WaitForSeconds(respawnDelay);
+        Respawn();
+    }
+    
+    public void Respawn()
+    {
+        isDead = false;
+        currentHealth = maxHealth;
+        
+        if (respawnPoint != null)
+        {
+            if (controller != null)
+            {
+                controller.enabled = false;
+                transform.position = respawnPoint.position;
+                transform.rotation = respawnPoint.rotation;
+                controller.enabled = true;
+            }
+            else
+            {
+                transform.position = respawnPoint.position;
+                transform.rotation = respawnPoint.rotation;
+            }
+        }
+        
+        gameObject.SetActive(true);
+        GameEvents.PlayerHealthChanged(currentHealth);
+        
+        Debug.Log("Player respawned with full health!");
+    }
+    
+    // ========== PUBLIC GETTERS (FIXES THE ERROR!) ==========
+    
+    public int GetCurrentHealth()
+    {
+        return currentHealth;
+    }
+    
+    public int GetMaxHealth()
+    {
+        return maxHealth;
+    }
+    
+    public float GetHealthPercent()
+    {
+        return (float)currentHealth / maxHealth;
+    }
+    
+    public bool IsDead()
+    {
+        return isDead;
+    }
+    
+    // Level up system (for Day 5 punch upgrades)
+    public void LevelUp()
+    {
+        currentPowerLevel++;
+        Debug.Log("Player leveled up to Level " + currentPowerLevel + "!");
+    }
+    
+    public void SetPowerLevel(int level)
+    {
+        currentPowerLevel = level;
     }
 }
