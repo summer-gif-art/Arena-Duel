@@ -136,7 +136,7 @@ public class PlayerCombat : MonoBehaviour
     void OnDrawGizmosSelected()
     {
         if (attackPoint == null) return;
-        Gizmos.color = Color.red;
+        Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 }
