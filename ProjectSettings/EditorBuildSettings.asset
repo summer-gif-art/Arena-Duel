@@ -9,10 +9,10 @@ EditorBuildSettings:
     path: Assets/Scenes/Map.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
-    path: Assets/MainMenu.unity
+    path: Assets/Scenes/MainMenu.unity
     guid: 2cfeab416c9323141a0fa58c157717a6
   - enabled: 1
-    path: Assets/EnemySelection.unity
+    path: Assets/Scenes/EnemySelection.unity
     guid: 45d870f70a11b724099645df3cae5ef7
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

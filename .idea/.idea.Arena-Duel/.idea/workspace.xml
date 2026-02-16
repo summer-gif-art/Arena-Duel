@@ -6,14 +6,298 @@
   <component name="ChangeListManager">
     <list default="true" id="3bb93ce0-0e42-4413-a88e-5f40cfe67fde" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Arena-Duel/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arena-Duel/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemy/Skeletons_demo/models/Materials/DS_skeleton_standard.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemy/Skeletons_demo/models/Materials/DS_skeleton_standard.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemy/Skeletons_demo/models/Materials/DemoEquipment.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemy/Skeletons_demo/models/Materials/DemoEquipment.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Scripts/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Player.Zeta/Scripts/PlayerHealth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/angGirl.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/angGirl.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/materials/N00_000_00_Body_00_SKIN (Instance).mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/materials/N00_000_00_Body_00_SKIN (Instance).mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/materials/N00_000_00_EyeIris_00_EYE (Instance).mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/materials/N00_000_00_EyeIris_00_EYE (Instance).mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/materials/N00_000_00_EyeWhite_00_EYE (Instance).mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/materials/N00_000_00_EyeWhite_00_EYE (Instance).mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/materials/N00_000_00_FaceBrow_00_FACE (Instance).mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/materials/N00_000_00_FaceBrow_00_FACE (Instance).mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/materials/N00_000_00_FaceEyeline_00_FACE (Instance).mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/materials/N00_000_00_FaceEyeline_00_FACE (Instance).mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/materials/N00_000_00_FaceMouth_00_FACE (Instance).mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/materials/N00_000_00_FaceMouth_00_FACE (Instance).mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/materials/N00_000_00_Face_00_SKIN (Instance).mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/materials/N00_000_00_Face_00_SKIN (Instance).mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/materials/N00_000_00_HairBack_00_HAIR (Instance).mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/materials/N00_000_00_HairBack_00_HAIR (Instance).mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/materials/N00_000_Hair_00_HAIR (Instance).mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/materials/N00_000_Hair_00_HAIR (Instance).mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/materials/N00_001_01_Shoes_01_CLOTH (Instance).mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/materials/N00_001_01_Shoes_01_CLOTH (Instance).mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/materials/N00_002_01_Tops_01_CLOTH (Instance).mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/materials/N00_002_01_Tops_01_CLOTH (Instance).mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/textures.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/textures/N00_000_00_Face_00_out.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/textures/N00_000_00_Face_00_out.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/textures/N00_000_00_HairBack_00_nml.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/textures/N00_000_00_HairBack_00_nml.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/textures/N00_000_Hair_00_nml.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/textures/N00_000_Hair_00_nml.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/textures/Thumbnail.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/textures/Thumbnail.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/textures/_01.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/textures/_01.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/textures/_02.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/textures/_02.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/textures/_04.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/textures/_04.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/textures/_05.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/textures/_05.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/textures/_06.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/textures/_06.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/textures/_07.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/textures/_07.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/textures/_09.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/textures/_09.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/textures/_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/textures/_10.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/textures/_11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/textures/_11.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/textures/_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/textures/_12.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/textures/_13.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/textures/_13.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/textures/_14.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/textures/_14.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/textures/_15.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/textures/_15.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/textures/_16.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Akane/textures/_16.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Animation.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Animation/AnimationController.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Animation/AnimationController.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Animation/angry.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Animation/angry.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Animation/happy.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Animation/happy.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Animation/neutral.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Animation/neutral.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Animation/sad.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Animation/sad.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Animation/smiling.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Animation/smiling.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Animation/stand.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Animation/stand.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Animation/surprised.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Animation/surprised.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Animation/walk.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Animation/walk.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Other.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Other/Sybox.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Other/Sybox.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Other/fence.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Other/fence.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Other/floor.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Other/floor.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Other/tex3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Other/tex3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Other/tex5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Other/tex5.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/SampleScene_Akane.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/SampleScene_Akane.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Scripts/Akane_CameraScript.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Scripts/Akane_CameraScript.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Scripts/Akane_CharacterController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Scripts/Akane_CharacterController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Scripts/Emotions.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Scripts/Emotions.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Scripts/MyLightSc.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Scripts/MyLightSc.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Shader/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Shader/LICENSE.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Shader/MToon.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Shader/MToon/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Shader/MToon/Editor/EditorEnums.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Shader/MToon/Editor/EditorEnums.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Shader/MToon/Editor/EditorUtils.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Shader/MToon/Editor/EditorUtils.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Shader/MToon/Editor/MToon.Editor.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Shader/MToon/Editor/MToon.Editor.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Shader/MToon/Editor/MToonInspector.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Shader/MToon/Editor/MToonInspector.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Shader/MToon/MToon.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Shader/MToon/MToon.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Shader/MToon/Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Shader/MToon/Resources/Shaders.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Shader/MToon/Resources/Shaders/MToon.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Shader/MToon/Resources/Shaders/MToon.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Shader/MToon/Resources/Shaders/MToonCore.cginc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Shader/MToon/Resources/Shaders/MToonCore.cginc.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Shader/MToon/Resources/Shaders/MToonSM3.cginc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Shader/MToon/Resources/Shaders/MToonSM3.cginc.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Shader/MToon/Resources/Shaders/MToonSM4.cginc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Shader/MToon/Resources/Shaders/MToonSM4.cginc.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Shader/MToon/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Shader/MToon/Scripts/Enums.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Shader/MToon/Scripts/Enums.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Shader/MToon/Scripts/MToonDefinition.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Shader/MToon/Scripts/MToonDefinition.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Shader/MToon/Scripts/Utils.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Shader/MToon/Scripts/Utils.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Shader/MToon/Scripts/UtilsGetter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Shader/MToon/Scripts/UtilsGetter.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Shader/MToon/Scripts/UtilsSetter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Shader/MToon/Scripts/UtilsSetter.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Shader/MToon/Scripts/UtilsVersion.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Shader/MToon/Scripts/UtilsVersion.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Shader/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/DemoScene/Shader/README.md.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Prefab/angGirl.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/3d-character_animeGirlAkane/Prefab/angGirl.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/Skeletons_demo.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/Skeletons_demo/DungeonSkeletons_pack.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/Skeletons_demo/DungeonSkeletons_pack.jpg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/Skeletons_demo/animation.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/Skeletons_demo/animation/DS_onehand_attack_A.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/Skeletons_demo/animation/DS_onehand_attack_A.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/Skeletons_demo/animation/DS_onehand_idle_A.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/Skeletons_demo/animation/DS_onehand_idle_A.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/Skeletons_demo/animation/DS_onehand_walk.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/Skeletons_demo/animation/DS_onehand_walk.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/Skeletons_demo/models.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/Skeletons_demo/models/DungeonSkeleton_demo.FBX" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/Skeletons_demo/models/DungeonSkeleton_demo.FBX.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/Skeletons_demo/models/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/Skeletons_demo/models/Materials/DS_skeleton_standard.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/Skeletons_demo/models/Materials/DS_skeleton_standard.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/Skeletons_demo/models/Materials/DemoEquipment.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/Skeletons_demo/models/Materials/DemoEquipment.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/Skeletons_demo/models/Materials/DemoEquipment.tga" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/Skeletons_demo/models/Materials/DemoEquipment.tga.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/Skeletons_demo/models/Materials/DemoSkeleton.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy/Skeletons_demo/models/Materials/DemoSkeleton.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EnemySelection.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/EnemySelection.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MainMenu.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/MainMenu.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Animators.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Animators/IdleA.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Animators/IdleA.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Animators/IdleB.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Animators/IdleB.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Animators/Jump.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Animators/Jump.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Animators/MaskFace.mask" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Animators/MaskFace.mask.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Animators/Muryotaisu.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Animators/Muryotaisu.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Animators/Walk.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Animators/Walk.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Animators/WallDoor.controller" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Animators/WallDoor.controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/ColliderColumn.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/ColliderColumn.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/ColliderDuct.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/ColliderDuct.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/ColliderFloor.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/ColliderFloor.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/ColliderMonitor.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/ColliderMonitor.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/ColliderRoof.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/ColliderRoof.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/ColliderWall.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/ColliderWall.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/ColliderWallDoor.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/ColliderWallDoor.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/ColliderWallDoorL.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/ColliderWallDoorL.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/ColliderWallDoorR.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/ColliderWallDoorR.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/LevelColumn.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/LevelColumn.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/LevelDuct.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/LevelDuct.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/LevelFloor.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/LevelFloor.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/LevelMonitor.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/LevelMonitor.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/LevelRoof.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/LevelRoof.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/LevelWall.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/LevelWall.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/LevelWallDoor.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/LevelWallDoor.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/Materials/Body.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/Materials/Body.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/Materials/Body.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/Materials/Body.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/Materials/BodyAo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/Materials/BodyAo.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/Materials/BodyNormal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/Materials/BodyNormal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/Materials/Face.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/Materials/Face.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/Materials/Face.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/Materials/Face.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/Materials/Hair.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/Materials/Hair.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/Materials/Hair.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/Materials/Hair.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/Materials/HairIllum.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/Materials/HairIllum.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/Materials/HairNormal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/Materials/HairNormal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/Materials/Level.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/Materials/Level.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/Materials/LevelAo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/Materials/LevelAo.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/Materials/LevelDif.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/Materials/LevelDif.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/Materials/LevelIllum.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/Materials/LevelIllum.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/Materials/LevelMetal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/Materials/LevelMetal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/Materials/LevelNormal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/Materials/LevelNormal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/Muryotaisu.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Models/Muryotaisu.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Prefabs/LevelColumn.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Prefabs/LevelColumn.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Prefabs/LevelDuct.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Prefabs/LevelDuct.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Prefabs/LevelFloor.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Prefabs/LevelFloor.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Prefabs/LevelMonitor.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Prefabs/LevelMonitor.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Prefabs/LevelRoof.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Prefabs/LevelRoof.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Prefabs/LevelWall.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Prefabs/LevelWall.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Prefabs/LevelWallDoor.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Prefabs/LevelWallDoor.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Readme(English and Japanese).txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Readme(English and Japanese).txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Scripts/MuryotaisuController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Scripts/MuryotaisuController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Scripts/MuryotaisuDoorOpen.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Scripts/MuryotaisuDoorOpen.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Scripts/PlayerCombat.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Scripts/PlayerCombat.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Scripts/PlayerHealth.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Scripts/PlayerHealth.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Scripts/PlayerMovment.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/Scripts/PlayerMovment.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/_Demo.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/_Demo/Demo.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player.Zeta/_Demo/Demo.unity.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Map.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Map.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/DefaultVolumeProfile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/DefaultVolumeProfile.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Ui/PlayerPotrait.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ui/PlayerPotrait.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -25,10 +309,10 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Player.Zeta/Scripts/PlayerHealth.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/KillerWater.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/EnemySelection.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/SkeletonProjectile.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/WitchBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@7652a5c7e246/Shaders/Lit.shader" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
@@ -132,6 +416,7 @@
       <workItem from="1771109887372" duration="124000" />
       <workItem from="1771112881473" duration="63000" />
       <workItem from="1771113054016" duration="2639000" />
+      <workItem from="1771268633069" duration="4874000" />
     </task>
     <servers />
   </component>
