@@ -5,14 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3bb93ce0-0e42-4413-a88e-5f40cfe67fde" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Arena-Duel/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arena-Duel/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Enemy1/Prefab/angGirl.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemy1/Prefab/angGirl.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Map.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Map.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Map.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Map/LightingData.asset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Map/LightingData.asset.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Map/ReflectionProbe-0.exr" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Map/ReflectionProbe-0.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/EnemyHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/EnemyHealth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/CombatUi.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/CombatUi.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/GameEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/GameEvents.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerCombat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerCombat.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerHealth.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovment.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SkeletonBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SkeletonBehaviour.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/SkeletonDemo.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SkeletonDemo.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,6 +134,8 @@
       <workItem from="1771112881473" duration="63000" />
       <workItem from="1771113054016" duration="2639000" />
       <workItem from="1771268633069" duration="5715000" />
+      <workItem from="1771324672235" duration="1034000" />
+      <workItem from="1771329332534" duration="9692000" />
     </task>
     <servers />
   </component>

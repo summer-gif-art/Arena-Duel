@@ -1938,7 +1938,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f37f02e46d695ce48b8d3dce64bbeccd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackRange: 2.5
+  attackRange: 4
   detectionRange: 12
   attackCooldown: 1.2
   attackDamage: 18
@@ -1960,7 +1960,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 120
-  enemyName: Enemy
+  enemyName: Witch
   enemyPortrait: {fileID: 81990611, guid: 7c858b4b84f9d9d4596f47817f472717, type: 3}
   healthBarFill: {fileID: 0}
   hpText: {fileID: 0}

@@ -12,6 +12,10 @@ public class GameEvents : MonoBehaviour
     public static event Action<int> OnPlayerHealthChanged;
     public static event Action<int> OnEnemyHealthChanged;
     
+    // XP Events
+    public static event System.Action<int, int, int> OnPlayerXPChanged; // currentXP, xpNeeded, level
+    public static event System.Action<int> OnPlayerLevelUp; // newLevel
+    
     // Game State Events
     public static event Action OnPlayerDeath;
     public static event Action OnEnemyDeath;
@@ -28,4 +32,7 @@ public class GameEvents : MonoBehaviour
     public static void EnemyDeath() => OnEnemyDeath?.Invoke();
     public static void GamePause() => OnGamePause?.Invoke();
     public static void GameResume() => OnGameResume?.Invoke();
+    // Helper methods
+    public static void PlayerXPChanged(int current, int needed, int level) => OnPlayerXPChanged?.Invoke(current, needed, level);
+    public static void PlayerLevelUp(int level) => OnPlayerLevelUp?.Invoke(level);
 }

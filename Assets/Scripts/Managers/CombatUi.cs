@@ -1,208 +1,238 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Collections;
 
 public class CombatUIManager : MonoBehaviour
 {
-    [Header("Player UI - Left Side")]
+    [Header("Player UI")]
     public Image playerHealthBarFill;
-    public Image playerHealthBarBackground;
     public Image playerPortrait;
     public TextMeshProUGUI playerNameText;
     public TextMeshProUGUI playerHPText;
     public TextMeshProUGUI playerLevelText;
-    
-    [Header("Enemy UI - Right Side")]
+
+    [Header("Enemy UI")]
     public Image enemyHealthBarFill;
-    public Image enemyHealthBarBackground;
     public Image enemyPortrait;
     public TextMeshProUGUI enemyNameText;
     public TextMeshProUGUI enemyHPText;
-    
+
+    [Header("XP UI")]
+    public Image xpBarFill;
+    public TextMeshProUGUI xpText;
+
     [Header("Battle Banners")]
     public GameObject fightBanner;
     public GameObject victoryBanner;
     public GameObject defeatBanner;
-    
-    [Header("Health Bar Colors")]
-    public Color healthyColor = Color.green;
-    public Color damagedColor = Color.yellow;
-    public Color criticalColor = Color.red;
-    public float damagedThreshold = 0.5f;
-    public float criticalThreshold = 0.25f;
-    
+
     [Header("Animation Settings")]
-    public float bannerDisplayTime = 2f;
     public float healthBarSmoothSpeed = 5f;
-    
+    public float bannerDisplayTime = 2f;
+
     [Header("References")]
     public PlayerHealth playerHealth;
     public EnemyHealth currentEnemy;
-    
+
     private float targetPlayerFill = 1f;
     private float targetEnemyFill = 1f;
-    
+    private float targetXPFill = 0f;
+
     void Start()
     {
-        // Hide all banners at start
         if (fightBanner != null) fightBanner.SetActive(false);
         if (victoryBanner != null) victoryBanner.SetActive(false);
         if (defeatBanner != null) defeatBanner.SetActive(false);
-        
+
         // Subscribe to events
         GameEvents.OnPlayerDeath += ShowDefeatBanner;
         GameEvents.OnEnemyDeath += ShowVictoryBanner;
         GameEvents.OnEnemyHealthChanged += OnEnemyHealthChanged;
         GameEvents.OnPlayerHealthChanged += OnPlayerHealthChanged;
-        
-        // Initial UI setup
+        GameEvents.OnPlayerXPChanged += OnXPChanged;
+        GameEvents.OnPlayerLevelUp += OnLevelUp;
+
         UpdatePlayerUI();
         UpdateEnemyUI();
+        // Initialize health bars to full and green
+        // Force health bars to start full and green
+        targetPlayerFill = 1f;
+        targetEnemyFill = 1f;
+
+        if (playerHealthBarFill != null)
+        {
+            playerHealthBarFill.fillAmount = 1f;
+            playerHealthBarFill.color = Color.green;
+        }
+        if (enemyHealthBarFill != null)
+        {
+            enemyHealthBarFill.fillAmount = 1f;
+            enemyHealthBarFill.color = Color.green;
+        }
     }
-    
+
     void OnDestroy()
     {
-        // Unsubscribe from events
         GameEvents.OnPlayerDeath -= ShowDefeatBanner;
         GameEvents.OnEnemyDeath -= ShowVictoryBanner;
         GameEvents.OnEnemyHealthChanged -= OnEnemyHealthChanged;
         GameEvents.OnPlayerHealthChanged -= OnPlayerHealthChanged;
+        GameEvents.OnPlayerXPChanged -= OnXPChanged;
+        GameEvents.OnPlayerLevelUp -= OnLevelUp;
     }
-    
+
     void Update()
     {
-        // Smooth health bar animation
+        // Smooth player health bar
         if (playerHealthBarFill != null)
         {
             playerHealthBarFill.fillAmount = Mathf.Lerp(
-                playerHealthBarFill.fillAmount, 
-                targetPlayerFill, 
+                playerHealthBarFill.fillAmount,
+                targetPlayerFill,
                 Time.deltaTime * healthBarSmoothSpeed
             );
-            UpdateHealthBarColor(playerHealthBarFill, playerHealthBarFill.fillAmount);
+            UpdateHealthColor(playerHealthBarFill, playerHealthBarFill.fillAmount);
         }
-        
+
+        // Smooth enemy health bar
         if (enemyHealthBarFill != null)
         {
             enemyHealthBarFill.fillAmount = Mathf.Lerp(
-                enemyHealthBarFill.fillAmount, 
-                targetEnemyFill, 
+                enemyHealthBarFill.fillAmount,
+                targetEnemyFill,
                 Time.deltaTime * healthBarSmoothSpeed
             );
-            UpdateHealthBarColor(enemyHealthBarFill, enemyHealthBarFill.fillAmount);
+            UpdateHealthColor(enemyHealthBarFill, enemyHealthBarFill.fillAmount);
+        }
+
+        // Smooth XP bar
+        if (xpBarFill != null)
+        {
+            xpBarFill.fillAmount = Mathf.Lerp(
+                xpBarFill.fillAmount,
+                targetXPFill,
+                Time.deltaTime * healthBarSmoothSpeed
+            );
         }
     }
-    
-    void UpdateHealthBarColor(Image healthBar, float fillPercent)
+
+    // GetAmped2 style health gradient: green → yellow → orange → red
+    void UpdateHealthColor(Image bar, float percent)
     {
-        if (fillPercent <= criticalThreshold)
+        if (percent > 0.75f)
         {
-            healthBar.color = criticalColor;
+            // Green
+            bar.color = Color.green;
         }
-        else if (fillPercent <= damagedThreshold)
+        else if (percent > 0.5f)
         {
-            healthBar.color = damagedColor;
+            // Green to Yellow
+            float t = (percent - 0.5f) / 0.25f;
+            bar.color = Color.Lerp(Color.yellow, Color.green, t);
+        }
+        else if (percent > 0.25f)
+        {
+            // Yellow to Orange
+            float t = (percent - 0.25f) / 0.25f;
+            bar.color = Color.Lerp(new Color(1f, 0.5f, 0f), Color.yellow, t);
         }
         else
         {
-            healthBar.color = healthyColor;
+            // Orange to Red
+            float t = percent / 0.25f;
+            bar.color = Color.Lerp(Color.red, new Color(1f, 0.5f, 0f), t);
         }
     }
-    
+
     public void UpdatePlayerUI()
     {
         if (playerHealth == null) return;
-        
-        // Update health bar target (will animate smoothly)
+
         targetPlayerFill = (float)playerHealth.GetCurrentHealth() / playerHealth.maxHealth;
-        
-        // Update HP text
+
         if (playerHPText != null)
-        {
             playerHPText.text = playerHealth.GetCurrentHealth() + " / " + playerHealth.maxHealth;
-        }
-        
-        // Update name
+
         if (playerNameText != null)
-        {
             playerNameText.text = "PLAYER";
-        }
-        
-        // Update level text
+
         if (playerLevelText != null)
-        {
             playerLevelText.text = "LVL " + playerHealth.currentPowerLevel;
-        }
     }
-    
+
     public void UpdateEnemyUI()
     {
         if (currentEnemy == null) return;
-        
-        // Update health bar target (will animate smoothly)
+
         targetEnemyFill = currentEnemy.GetHealthPercent();
-        
-        // Update HP text
+
         if (enemyHPText != null)
-        {
             enemyHPText.text = currentEnemy.GetCurrentHealth() + " / " + currentEnemy.GetMaxHealth();
-        }
-        
-        // Update name
+
         if (enemyNameText != null)
-        {
             enemyNameText.text = currentEnemy.GetEnemyName().ToUpper();
-        }
-        
-        // Update portrait
+
         if (enemyPortrait != null && currentEnemy.enemyPortrait != null)
-        {
             enemyPortrait.sprite = currentEnemy.enemyPortrait;
-        }
     }
-    
+
     public void SetCurrentEnemy(EnemyHealth enemy)
     {
         currentEnemy = enemy;
         UpdateEnemyUI();
     }
-    
+
     void OnPlayerHealthChanged(int newHealth)
     {
         UpdatePlayerUI();
     }
-    
+
     void OnEnemyHealthChanged(int newHealth)
     {
         UpdateEnemyUI();
     }
-    
-    // ========== BANNER SYSTEM ==========
-    
+
+    void OnXPChanged(int currentXP, int xpNeeded, int level)
+    {
+        targetXPFill = (float)currentXP / xpNeeded;
+
+        if (xpText != null)
+            xpText.text = currentXP + " / " + xpNeeded + " XP";
+
+        if (playerLevelText != null)
+            playerLevelText.text = "LVL " + level;
+    }
+
+    void OnLevelUp(int newLevel)
+    {
+        Debug.Log("UI: Level Up to " + newLevel + "!");
+        if (playerLevelText != null)
+            playerLevelText.text = "LVL " + newLevel;
+    }
+
+    // ========== BANNERS ==========
+
     public void ShowFightBanner()
     {
         StartCoroutine(DisplayBanner(fightBanner));
     }
-    
+
     public void ShowVictoryBanner()
     {
         if (victoryBanner != null)
-        {
             victoryBanner.SetActive(true);
-        }
         Debug.Log("VICTORY!");
     }
-    
+
     public void ShowDefeatBanner()
     {
         if (defeatBanner != null)
-        {
             defeatBanner.SetActive(true);
-        }
         Debug.Log("DEFEAT!");
     }
-    
-    System.Collections.IEnumerator DisplayBanner(GameObject banner)
+
+    IEnumerator DisplayBanner(GameObject banner)
     {
         if (banner != null)
         {
@@ -211,7 +241,7 @@ public class CombatUIManager : MonoBehaviour
             banner.SetActive(false);
         }
     }
-    
+
     public void HideAllBanners()
     {
         if (fightBanner != null) fightBanner.SetActive(false);

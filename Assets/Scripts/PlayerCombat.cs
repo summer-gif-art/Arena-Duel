@@ -27,13 +27,14 @@ public class PlayerCombat : MonoBehaviour
     private float dodgeTimer = 0f;
     private Vector3 dodgeDirection;
     private CharacterController characterController;
-
+    private PlayerXP playerXP;
     public bool IsBlocking => isBlocking;
     public bool IsDodging => isDodging;
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        playerXP = GetComponent<PlayerXP>();
     }
 
     void Update()
@@ -99,6 +100,7 @@ public class PlayerCombat : MonoBehaviour
             if (enemyHealth != null)
             {
                 enemyHealth.TakeDamage(attackDamage);
+                if (playerXP != null) playerXP.OnHitEnemy();
                 Debug.Log("Hit " + enemy.name + " for " + attackDamage + " damage!");
             }
         }
@@ -128,15 +130,16 @@ public class PlayerCombat : MonoBehaviour
     // Call this from your player health script when taking damage
     public int ModifyDamage(int incomingDamage)
     {
-        if (isDodging) return 0; // no damage during dodge
-        if (isBlocking) return Mathf.RoundToInt(incomingDamage * (1f - blockDamageReduction));
+        if (isDodging)
+        {
+            if (playerXP != null) playerXP.OnSuccessfulDodge();
+            return 0;
+        }
+        if (isBlocking)
+        {
+            if (playerXP != null) playerXP.OnSuccessfulBlock();
+            return Mathf.RoundToInt(incomingDamage * (1f - blockDamageReduction));
+        }
         return incomingDamage;
-    }
-
-    void OnDrawGizmosSelected()
-    {
-        if (attackPoint == null) return;
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
     }
 }

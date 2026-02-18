@@ -20,9 +20,11 @@ public class SkeletonAI : MonoBehaviour
     private Transform player;
     private float nextAttackTime = 0f;
     private EnemyHealth enemyHealth;
-
+    private float fixedY;
     void Start()
+    
     {
+        fixedY = transform.position.y;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         enemyHealth = GetComponent<EnemyHealth>();
     }
@@ -65,6 +67,7 @@ public class SkeletonAI : MonoBehaviour
             Attack();
             nextAttackTime = Time.time + attackCooldown;
         }
+        transform.position = new Vector3(transform.position.x, fixedY, transform.position.z);
     }
 
     void Attack()

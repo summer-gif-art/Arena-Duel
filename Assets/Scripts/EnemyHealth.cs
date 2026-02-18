@@ -27,7 +27,7 @@ public class EnemyHealth : MonoBehaviour
     private Color originalColor;
     private bool isDead = false;
     
-    void Start()
+    void Awake()
     {
         currentHealth = maxHealth;
         enemyRenderer = GetComponentInChildren<Renderer>();
