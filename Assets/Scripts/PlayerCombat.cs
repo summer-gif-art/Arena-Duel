@@ -28,6 +28,7 @@ public class PlayerCombat : MonoBehaviour
     private Vector3 dodgeDirection;
     private CharacterController characterController;
     private PlayerXP playerXP;
+    
     public bool IsBlocking => isBlocking;
     public bool IsDodging => isDodging;
 
@@ -61,6 +62,7 @@ public class PlayerCombat : MonoBehaviour
         }
 
         // BLOCK: Hold Left Shift
+        AudioManager.Instance?.PlayBlock();
         isBlocking = Input.GetKey(KeyCode.LeftShift);
         if (isBlocking)
         {
@@ -114,6 +116,7 @@ public class PlayerCombat : MonoBehaviour
         // Dodge in the direction the player is moving, or backward if standing still
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
+        AudioManager.Instance?.PlayDodge();
 
         if (h != 0 || v != 0)
         {

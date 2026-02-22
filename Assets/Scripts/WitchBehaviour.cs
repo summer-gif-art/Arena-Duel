@@ -19,6 +19,7 @@ public class WitchAI : MonoBehaviour
 
     private Transform player;
     private EnemyHealth enemyHealth;
+    private Animator animator;
     private float nextAttackTime = 0f;
     private bool isLunging = false;
     private float lungeTimer = 0f;
@@ -28,18 +29,23 @@ public class WitchAI : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         enemyHealth = GetComponent<EnemyHealth>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     void Update()
     {
         if (player == null || (enemyHealth != null && enemyHealth.GetCurrentHealth() <= 0))
+        {
+            animator?.SetBool("isWalk", false);
             return;
+        }
 
         // Handle lunge
         if (isLunging)
         {
             transform.position += lungeDirection * lungeSpeed * Time.deltaTime;
             lungeTimer -= Time.deltaTime;
+            animator?.SetBool("isWalk", true);
             if (lungeTimer <= 0f)
                 isLunging = false;
             return;
@@ -53,16 +59,21 @@ public class WitchAI : MonoBehaviour
         if (lookDir != Vector3.zero)
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookDir), Time.deltaTime * 8f);
 
-        // BEHAVIOR: Aggressive melee
         if (distance > detectionRange)
         {
+            animator?.SetBool("isWalk", false);
             return;
         }
         else if (distance > attackRange)
         {
-            // Chase the player aggressively
+            // Chase the player
             Vector3 moveDir = (player.position - transform.position).normalized;
             transform.position += moveDir * chaseSpeed * Time.deltaTime;
+            animator?.SetBool("isWalk", true);
+        }
+        else
+        {
+            animator?.SetBool("isWalk", false);
         }
 
         // Attack when close enough
@@ -71,7 +82,6 @@ public class WitchAI : MonoBehaviour
             Attack();
             nextAttackTime = Time.time + attackCooldown;
         }
-        // Lunge if just outside attack range
         else if (distance <= lungeDistance && distance > attackRange && Time.time >= nextAttackTime)
         {
             StartLunge();
@@ -81,12 +91,20 @@ public class WitchAI : MonoBehaviour
     void Attack()
     {
         Debug.Log("Witch melee attack!");
-        
+        animator?.SetInteger("emotions", 1);
+        AudioManager.Instance?.PlayWitchAttack();
+
         PlayerHealth playerHealth = player.GetComponent<PlayerHealth>();
         if (playerHealth != null)
-        {
             playerHealth.TakeDamage(attackDamage);
-        }
+
+        // Reset emotions back to 0 after a short delay
+        Invoke(nameof(ResetEmotion), 0.5f);
+    }
+
+    void ResetEmotion()
+    {
+        animator?.SetInteger("emotions", 0);
     }
 
     void StartLunge()
@@ -95,8 +113,6 @@ public class WitchAI : MonoBehaviour
         lungeTimer = lungeDuration;
         lungeDirection = (player.position - transform.position).normalized;
         Debug.Log("Witch lunges!");
-        
-        // Attack at end of lunge
         Attack();
         nextAttackTime = Time.time + attackCooldown;
     }

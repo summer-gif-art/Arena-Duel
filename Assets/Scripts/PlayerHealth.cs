@@ -9,7 +9,7 @@ public class PlayerHealth : MonoBehaviour
 
     private PlayerCombat playerCombat;
 
-    void Start()
+    void Awake()
     {
         currentHealth = maxHealth;
         playerCombat = GetComponent<PlayerCombat>();

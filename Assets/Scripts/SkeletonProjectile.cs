@@ -30,20 +30,20 @@ public class SkeletonProjectile : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Projectile hit: " + other.gameObject.name + " tag: " + other.tag);
+    
+        if (other.CompareTag("Enemy")) return;
+
         if (other.CompareTag("Player"))
         {
             PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
             if (playerHealth != null)
             {
                 playerHealth.TakeDamage(damage);
+                Debug.Log("Projectile hit player for " + damage + " damage!");
             }
-            Destroy(gameObject);
         }
 
-        // Destroy on hitting walls/floor
-        if (!other.CompareTag("Enemy"))
-        {
-            Destroy(gameObject);
-        }
+        Destroy(gameObject);
     }
 }

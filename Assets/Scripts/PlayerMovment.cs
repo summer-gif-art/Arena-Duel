@@ -12,17 +12,17 @@ public class PlayerMovement : MonoBehaviour
     public float groundCheckDistance = 0.3f;
 
     private CharacterController controller;
+    private Animator animator;
     private Vector3 velocity;
     private bool isGrounded;
 
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        animator = GetComponentInChildren<Animator>();
 
         if (controller == null)
-        {
             Debug.LogError("Character Controller not found on Player!");
-        }
     }
 
     void Update()
@@ -31,11 +31,9 @@ public class PlayerMovement : MonoBehaviour
         isGrounded = controller.isGrounded;
 
         if (isGrounded && velocity.y < 0)
-        {
             velocity.y = -2f;
-        }
 
-        // Get input - W forward, A left, D right, S backward
+        // Get input
         float horizontal = 0f;
         float vertical = 0f;
 
@@ -44,25 +42,37 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey(KeyCode.A)) horizontal = -1f;
         if (Input.GetKey(KeyCode.D)) horizontal = 1f;
 
-        // Calculate movement direction
-        Vector3 moveDirection = new Vector3(horizontal, 0f, vertical).normalized;
+        // Camera-relative movement
+        Transform cam = Camera.main.transform;
+        Vector3 camForward = new Vector3(cam.forward.x, 0f, cam.forward.z).normalized;
+        Vector3 camRight = new Vector3(cam.right.x, 0f, cam.right.z).normalized;
+        Vector3 moveDirection = (camForward * vertical + camRight * horizontal).normalized;
 
-        // Move the player
-        if (moveDirection.magnitude >= 0.1f)
+        bool isMoving = moveDirection.magnitude >= 0.1f;
+
+        if (isMoving)
         {
             controller.Move(moveDirection * moveSpeed * Time.deltaTime);
 
-            // Rotate player to face movement direction
+            // Rotate to face movement direction
             Quaternion targetRotation = Quaternion.LookRotation(moveDirection);
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
         }
 
-        // Jump on Enter
+        // Jump
         if (Input.GetKeyDown(KeyCode.Return) && isGrounded)
         {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            animator?.SetBool("jumpFlag", true);
             Debug.Log("Player jumped!");
         }
+
+        // Reset jump flag when grounded
+        if (isGrounded)
+            animator?.SetBool("jumpFlag", false);
+
+        // Walk animation
+        animator?.SetBool("walkFlag", isMoving && isGrounded);
 
         // Apply gravity
         velocity.y += gravity * Time.deltaTime;

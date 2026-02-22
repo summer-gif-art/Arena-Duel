@@ -21,18 +21,24 @@ public class SkeletonAI : MonoBehaviour
     private float nextAttackTime = 0f;
     private EnemyHealth enemyHealth;
     private float fixedY;
+    private Animator animator;
+    private bool isMoving = false;
+
     void Start()
-    
     {
         fixedY = transform.position.y;
         player = GameObject.FindGameObjectWithTag("Player").transform;
         enemyHealth = GetComponent<EnemyHealth>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     void Update()
     {
         if (player == null || (enemyHealth != null && enemyHealth.GetCurrentHealth() <= 0))
+        {
+            animator?.SetBool("isWalking", false);
             return;
+        }
 
         float distance = Vector3.Distance(transform.position, player.position);
 
@@ -42,24 +48,29 @@ public class SkeletonAI : MonoBehaviour
         if (lookDir != Vector3.zero)
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookDir), Time.deltaTime * 5f);
 
-        // BEHAVIOR: Keep distance and shoot
+        isMoving = false;
+
         if (distance > detectionRange)
         {
-            // Player too far, idle
+            animator?.SetBool("isWalking", false);
             return;
         }
         else if (distance < tooCloseDistance)
         {
-            // Too close! Retreat
+            // Retreating
             Vector3 retreatDir = (transform.position - player.position).normalized;
             transform.position += retreatDir * retreatSpeed * Time.deltaTime;
+            isMoving = true;
         }
         else if (distance > preferredDistance)
         {
-            // Move closer to preferred range
+            // Moving closer
             Vector3 moveDir = (player.position - transform.position).normalized;
             transform.position += moveDir * moveSpeed * Time.deltaTime;
+            isMoving = true;
         }
+
+        animator?.SetBool("isWalking", isMoving);
 
         // Attack when in range
         if (distance <= detectionRange && distance >= tooCloseDistance && Time.time >= nextAttackTime)
@@ -67,19 +78,25 @@ public class SkeletonAI : MonoBehaviour
             Attack();
             nextAttackTime = Time.time + attackCooldown;
         }
+
         transform.position = new Vector3(transform.position.x, fixedY, transform.position.z);
     }
 
     void Attack()
     {
-        if (projectilePrefab != null && firePoint != null)
+        AudioManager.Instance?.PlaySkeletonAttack();
+        animator?.SetTrigger("Attack");
+
+        if (projectilePrefab != null)
         {
-            GameObject proj = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+            Vector3 spawnPos = transform.position + Vector3.up * 2f;
+            GameObject proj = Instantiate(projectilePrefab, spawnPos, Quaternion.identity);
             SkeletonProjectile projScript = proj.GetComponent<SkeletonProjectile>();
             if (projScript != null)
             {
                 projScript.SetDamage(attackDamage);
-                projScript.SetDirection((player.position - firePoint.position).normalized);
+                Vector3 direction = (player.position - spawnPos).normalized;
+                projScript.SetDirection(direction);
             }
             Debug.Log("Skeleton fires projectile!");
         }
