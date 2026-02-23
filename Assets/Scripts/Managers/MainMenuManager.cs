@@ -7,6 +7,10 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("EnemySelection"); // Or go straight to selection UI
     }
+    public void OpenGameRules()
+    {
+        SceneManager.LoadScene("GameRules");
+    }
     
     public void QuitGame()
     {

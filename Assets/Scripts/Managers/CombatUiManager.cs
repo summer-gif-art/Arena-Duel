@@ -31,6 +31,7 @@ public class CombatUIManager : MonoBehaviour
     [Header("Fight Sequence")]
     public GameObject readyText;
     public float readyDuration = 1.5f;
+    [HideInInspector] public bool fightSequenceDone = false;
 
     [Header("Animation Settings")]
     public float healthBarSmoothSpeed = 5f;
@@ -196,7 +197,7 @@ public class CombatUIManager : MonoBehaviour
             playerLevelText.text = "LVL " + newLevel;
     }
 
-    // ========== FIGHT SEQUENCE ==========
+    // FIGHT SEQUENCE
 
     public void ShowFightBanner()
     {
@@ -218,6 +219,7 @@ public class CombatUIManager : MonoBehaviour
         {
             fightBanner.SetActive(true);
             Image bannerImage = fightBanner.GetComponent<Image>();
+            AudioManager.Instance?.PlayFightBanner();
 
             if (bannerImage != null)
             {
@@ -267,13 +269,19 @@ public class CombatUIManager : MonoBehaviour
         }
 
         Time.timeScale = 1f;
+        fightSequenceDone = true;
         Debug.Log("FIGHT!");
     }
 
-    // ========== WIN/LOSE BANNERS ==========
+    //WIN - LOSE BANNERS
 
     public void ShowVictoryBanner()
     {
+        if (enemyHealthBarFill != null)
+        {
+            enemyHealthBarFill.fillAmount = 0f;
+            targetEnemyFill = 0f;
+        }
         if (victoryBanner != null)
             victoryBanner.SetActive(true);
         Time.timeScale = 0f;
@@ -285,6 +293,11 @@ public class CombatUIManager : MonoBehaviour
 
     public void ShowDefeatBanner()
     {
+        if (playerHealthBarFill != null)
+        {
+            playerHealthBarFill.fillAmount = 0f;
+            targetPlayerFill = 0f;
+        }
         if (defeatBanner != null)
             defeatBanner.SetActive(true);
         Time.timeScale = 0f;

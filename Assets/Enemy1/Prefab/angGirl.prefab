@@ -1873,8 +1873,8 @@ Transform:
   m_GameObject: {fileID: 4484111761750686190}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalPosition: {x: 10, y: -3, z: -6}
+  m_LocalScale: {x: 3, y: 3, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5314746866759857098}
@@ -1947,6 +1947,7 @@ MonoBehaviour:
   lungeDistance: 3
   lungeSpeed: 10
   lungeDuration: 0.2
+  attackVFXPrefab: {fileID: 8293869836834216953, guid: 8293690d7899953419fb457436cdb93e, type: 3}
 --- !u!114 &3680024089108057894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1966,7 +1967,7 @@ MonoBehaviour:
   hpText: {fileID: 0}
   nameText: {fileID: 0}
   portraitImage: {fileID: 0}
-  deathEffectPrefab: {fileID: 0}
+  deathEffectPrefab: {fileID: 8004061199188420018, guid: 7a7018ab3efb8694ea96c76b9c16b46f, type: 3}
   hitFlashDuration: 0.1
   hitFlashColor: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &4507022178543547693

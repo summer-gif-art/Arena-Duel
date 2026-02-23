@@ -16,6 +16,9 @@ public class WitchAI : MonoBehaviour
     public float lungeDistance = 3f;
     public float lungeSpeed = 10f;
     public float lungeDuration = 0.2f;
+    
+    [Header("VFX")]
+    public GameObject attackVFXPrefab;
 
     private Transform player;
     private EnemyHealth enemyHealth;
@@ -90,7 +93,8 @@ public class WitchAI : MonoBehaviour
 
     void Attack()
     {
-        Debug.Log("Witch melee attack!");
+        if (attackVFXPrefab != null)
+            Instantiate(attackVFXPrefab, player.position + Vector3.up, Quaternion.identity);
         animator?.SetInteger("emotions", 1);
         AudioManager.Instance?.PlayWitchAttack();
 

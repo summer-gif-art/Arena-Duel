@@ -1,4 +1,5 @@
 using UnityEngine;
+using Muryotaisu;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -19,9 +20,7 @@ public class PlayerHealth : MonoBehaviour
     {
         // Let block/dodge modify the damage
         if (playerCombat != null)
-        {
             damage = playerCombat.ModifyDamage(damage);
-        }
 
         if (damage <= 0)
         {
@@ -33,13 +32,10 @@ public class PlayerHealth : MonoBehaviour
         currentHealth = Mathf.Max(currentHealth, 0);
         Debug.Log("Player took " + damage + " damage! Health: " + currentHealth + "/" + maxHealth);
 
-        // Update UI
         GameEvents.PlayerHealthChanged(currentHealth);
 
         if (currentHealth <= 0)
-        {
             Die();
-        }
     }
 
     void Die()
@@ -51,8 +47,8 @@ public class PlayerHealth : MonoBehaviour
 
     System.Collections.IEnumerator DeathSequence()
     {
-        // Disable controls
-        PlayerMovement movement = GetComponent<PlayerMovement>();
+        // Disable controls on death
+        MuryotaisuController movement = GetComponent<MuryotaisuController>();
         PlayerCombat combat = GetComponent<PlayerCombat>();
         if (movement != null) movement.enabled = false;
         if (combat != null) combat.enabled = false;
@@ -70,7 +66,6 @@ public class PlayerHealth : MonoBehaviour
             yield return null;
         }
 
-        // Wait a moment
         yield return new WaitForSeconds(0.5f);
 
         // Sink into ground
@@ -96,6 +91,7 @@ public class PlayerHealth : MonoBehaviour
     {
         return (float)currentHealth / maxHealth;
     }
+
     public int GetCurrentHealth()
     {
         return currentHealth;

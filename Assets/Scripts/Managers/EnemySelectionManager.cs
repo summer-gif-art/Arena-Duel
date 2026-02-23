@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 using TMPro;
 
 public class EnemySelectionManager : MonoBehaviour
@@ -20,85 +21,70 @@ public class EnemySelectionManager : MonoBehaviour
 
     [Header("UI - Enemy 1")]
     public Button enemy1Button;
-    public TextMeshProUGUI enemy1NameText;
     public Image enemy1Portrait;
     public TextMeshProUGUI enemy1Description;
     public Outline enemy1Outline;
 
     [Header("UI - Enemy 2")]
     public Button enemy2Button;
-    public TextMeshProUGUI enemy2NameText;
     public Image enemy2Portrait;
     public TextMeshProUGUI enemy2Description;
     public Outline enemy2Outline;
 
-    [Header("Fight Button")]
-    public Button fightButton;
-
     [Header("Highlight Settings")]
-    public Color selectedColor = new Color(1f, 0.8f, 0f, 1f);
-    public Color deselectedColor = new Color(0f, 0f, 0f, 0f);
+    public Color hoverColor = new Color(1f, 0.8f, 0f, 1f);
+    public Color normalColor = new Color(0f, 0f, 0f, 0f);
 
     [Header("Scene Settings")]
     public string arenaSceneName = "Map";
 
-    private int selectedIndex = -1;
-
     void Start()
     {
-        if (fightButton != null)
-            fightButton.gameObject.SetActive(false);
-
         SetHighlight(enemy1Outline, false);
         SetHighlight(enemy2Outline, false);
 
-        SetupButtons();
-    }
-
-    void SetupButtons()
-    {
+        // Click listeners - clicking immediately loads map
         if (enemy1Button != null)
-        {
             enemy1Button.onClick.AddListener(() => SelectEnemy(0));
-            if (enemy1NameText != null)
-                enemy1NameText.text = enemy1.enemyName;
-        }
 
         if (enemy2Button != null)
-        {
             enemy2Button.onClick.AddListener(() => SelectEnemy(1));
-            if (enemy2NameText != null)
-                enemy2NameText.text = enemy2.enemyName;
-        }
 
-        if (fightButton != null)
-            fightButton.onClick.AddListener(StartFight);
+        // Hover listeners
+        AddHoverEvents(enemy1Button, enemy1Outline);
+        AddHoverEvents(enemy2Button, enemy2Outline);
+    }
+
+    void AddHoverEvents(Button btn, Outline outline)
+    {
+        if (btn == null) return;
+
+        EventTrigger trigger = btn.gameObject.GetComponent<EventTrigger>();
+        if (trigger == null) trigger = btn.gameObject.AddComponent<EventTrigger>();
+
+        EventTrigger.Entry enterEntry = new EventTrigger.Entry();
+        enterEntry.eventID = EventTriggerType.PointerEnter;
+        enterEntry.callback.AddListener((data) => SetHighlight(outline, true));
+        trigger.triggers.Add(enterEntry);
+
+        EventTrigger.Entry exitEntry = new EventTrigger.Entry();
+        exitEntry.eventID = EventTriggerType.PointerExit;
+        exitEntry.callback.AddListener((data) => SetHighlight(outline, false));
+        trigger.triggers.Add(exitEntry);
     }
 
     void SelectEnemy(int index)
     {
-        selectedIndex = index;
-        SetHighlight(enemy1Outline, index == 0);
-        SetHighlight(enemy2Outline, index == 1);
-
-        if (fightButton != null)
-            fightButton.gameObject.SetActive(true);
-
+        PlayerPrefs.SetInt("SelectedEnemyIndex", index);
+        PlayerPrefs.Save();
         Debug.Log("Selected: " + (index == 0 ? enemy1.enemyName : enemy2.enemyName));
+        SceneManager.LoadScene(arenaSceneName);
     }
 
     void SetHighlight(Outline outline, bool active)
     {
         if (outline == null) return;
-        outline.effectColor = active ? selectedColor : deselectedColor;
-        outline.effectDistance = new Vector2(4, -4);
-    }
-
-    void StartFight()
-    {
-        if (selectedIndex == -1) return;
-        PlayerPrefs.SetInt("SelectedEnemyIndex", selectedIndex);
-        PlayerPrefs.Save();
-        SceneManager.LoadScene(arenaSceneName);
+        outline.effectColor = active ? hoverColor : normalColor;
+        outline.effectDistance = new Vector2(5, -5);
     }
 }

@@ -6,38 +6,37 @@
   <component name="ChangeListManager">
     <list default="true" id="3bb93ce0-0e42-4413-a88e-5f40cfe67fde" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Arena-Duel/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arena-Duel/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemy1/Akane/materials/N00_000_00_Body_00_SKIN (Instance).mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemy1/Akane/materials/N00_000_00_Body_00_SKIN (Instance).mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemy1/Akane/materials/N00_000_00_EyeIris_00_EYE (Instance).mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemy1/Akane/materials/N00_000_00_EyeIris_00_EYE (Instance).mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemy1/Akane/materials/N00_000_00_FaceEyeline_00_FACE (Instance).mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemy1/Akane/materials/N00_000_00_FaceEyeline_00_FACE (Instance).mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemy1/Akane/materials/N00_000_00_FaceMouth_00_FACE (Instance).mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemy1/Akane/materials/N00_000_00_FaceMouth_00_FACE (Instance).mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemy1/Akane/materials/N00_000_00_Face_00_SKIN (Instance).mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemy1/Akane/materials/N00_000_00_Face_00_SKIN (Instance).mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemy1/Akane/materials/N00_000_00_HairBack_00_HAIR (Instance).mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemy1/Akane/materials/N00_000_00_HairBack_00_HAIR (Instance).mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemy1/Akane/materials/N00_000_Hair_00_HAIR (Instance).mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemy1/Akane/materials/N00_000_Hair_00_HAIR (Instance).mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemy1/Akane/materials/N00_001_01_Shoes_01_CLOTH (Instance).mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemy1/Akane/materials/N00_001_01_Shoes_01_CLOTH (Instance).mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audios/BlockAttack.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audios/BlockAttack.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audios/PlayerAudio.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audios/PlayerAudio.ogg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audios/WitchSound.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Audios/WitchSound.ogg.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Enemy1/Akane/materials/N00_002_01_Tops_01_CLOTH (Instance).mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemy1/Akane/materials/N00_002_01_Tops_01_CLOTH (Instance).mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemy1/DemoScene/Animation/AnimationController.controller" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemy1/DemoScene/Animation/AnimationController.controller.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Enemy1/Prefab/angGirl.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemy1/Prefab/angGirl.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemy2/Skeletons_demo/models/Materials/DS_skeleton_standard.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemy2/Skeletons_demo/models/Materials/DS_skeleton_standard.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Enemy2/Skeletons_demo/models/Materials/DemoEquipment.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemy2/Skeletons_demo/models/Materials/DemoEquipment.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Enemy2/Skeletons_demo/animation/SkeletonController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Enemy2/Skeletons_demo/animation/SkeletonController.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Player/Animators/Muryotaisu.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Player/Animators/Muryotaisu.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player/Scripts/MuryotaisuController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Player/Scripts/MuryotaisuController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/EnemySelection.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/EnemySelection.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Map.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Map.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/CombatUi.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/CombatUi.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Muryotaisu.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Muryotaisu.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/MainMenu.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/ArenaManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/ArenaManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/AudioManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/CombatUiManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/CombatUiManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/EnemySelectionManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/EnemySelectionManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/GameEvents.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/GameEvents.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerCombat.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerCombat.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerHealth.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerHealth.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerMovment.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SkeletonBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SkeletonBehaviour.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SkeletonProjectile.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SkeletonProjectile.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovment.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerMovment.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/WitchBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/WitchBehaviour.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/SkeletonDemo.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SkeletonDemo.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/SkeletonProjectile.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/SkeletonProjectile.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Ui/DefeatBannerImg.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ui/DefeatBannerImg.png.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Ui/VictoryBannerImg.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Ui/VictoryBannerImg.png.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +50,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/KillerWater.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/MainMenu.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/AudioManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Managers/GameRulesManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/SkeletonProjectile.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/WitchBehaviour.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@7652a5c7e246/Shaders/Lit.shader" root0="SKIP_HIGHLIGHTING" />
@@ -165,6 +165,12 @@
       <workItem from="1771558323184" duration="806000" />
       <workItem from="1771588044458" duration="809000" />
       <workItem from="1771724408758" duration="2035000" />
+      <workItem from="1771731567363" duration="497000" />
+      <workItem from="1771757734797" duration="1576000" />
+      <workItem from="1771760491827" duration="6647000" />
+      <workItem from="1771771322699" duration="1081000" />
+      <workItem from="1771783936176" duration="4127000" />
+      <workItem from="1771855880180" duration="5772000" />
     </task>
     <servers />
   </component>
