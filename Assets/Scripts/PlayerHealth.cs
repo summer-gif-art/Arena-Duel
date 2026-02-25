@@ -8,6 +8,13 @@ public class PlayerHealth : MonoBehaviour
     private int currentHealth;
     public int currentPowerLevel = 1;
 
+    [Header("Death Animation")]
+    [SerializeField] private float fallTime = 1f;
+    [SerializeField] private Vector3 deathFallRotation = new Vector3(90f, 0f, 0f);
+    [SerializeField] private float deathPauseTime = 0.5f;
+    [SerializeField] private float sinkTime = 1f;
+    [SerializeField] private float sinkDepth = 2f;
+
     private PlayerCombat playerCombat;
 
     void Awake()
@@ -54,10 +61,9 @@ public class PlayerHealth : MonoBehaviour
         if (combat != null) combat.enabled = false;
 
         // Fall over animation
-        float fallTime = 1f;
         float timer = 0f;
         Quaternion startRot = transform.rotation;
-        Quaternion endRot = transform.rotation * Quaternion.Euler(90f, 0f, 0f);
+        Quaternion endRot = transform.rotation * Quaternion.Euler(deathFallRotation);
 
         while (timer < fallTime)
         {
@@ -66,13 +72,12 @@ public class PlayerHealth : MonoBehaviour
             yield return null;
         }
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(deathPauseTime);
 
         // Sink into ground
-        float sinkTime = 1f;
         timer = 0f;
         Vector3 startPos = transform.position;
-        Vector3 endPos = transform.position + Vector3.down * 2f;
+        Vector3 endPos = transform.position + Vector3.down * sinkDepth;
 
         CharacterController controller = GetComponent<CharacterController>();
         if (controller != null) controller.enabled = false;

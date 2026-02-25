@@ -86,9 +86,9 @@ public class ArenaManager : MonoBehaviour
 
         if (movement != null) movement.canMove = enabled;
         if (combat != null) combat.enabled = enabled;
-        
+
         if (currentEnemy != null)
-        { 
+        {
             WitchAI witch = currentEnemy.GetComponent<WitchAI>();
             SkeletonAI skeleton = currentEnemy.GetComponent<SkeletonAI>();
             if (witch != null) witch.enabled = enabled;
@@ -134,7 +134,7 @@ public class ArenaManager : MonoBehaviour
 
         if (combatUI != null)
             combatUI.ShowFightBanner();
-        yield return new WaitUntil(() => combatUI.fightSequenceDone); //Wait until banner signals it's done
+        yield return new WaitUntil(() => combatUI.fightSequenceDone);
 
         // Unlock player controls after fight banner finishes
         SetPlayerMovement(true);

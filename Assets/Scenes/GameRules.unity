@@ -537,7 +537,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1255040339, guid: c4ff71f9ba960a840bc67182bbe144cc, type: 3}
+  m_Sprite: {fileID: -601902363, guid: cae8290161ff6f84494eb66317c1eeb7, type: 3}
   m_Type: 1
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -593,8 +593,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1105720203, guid: e8082b69c4fba03488270d6d52673654, type: 3}
-  m_Type: 1
+  m_Sprite: {fileID: 1987040814, guid: 3e24284ecfe87ca4787dc717e8691ef5, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1280,6 +1280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   page1: {fileID: 668546872}
   page2: {fileID: 960385003}
+  mainMenuScene: MainMenu
 --- !u!4 &2110123780
 Transform:
   m_ObjectHideFlags: 0

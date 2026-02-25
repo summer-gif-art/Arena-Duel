@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class SkeletonProjectile : MonoBehaviour
 {
+    [Header("Projectile Settings")]
     public float speed = 12f;
     public float lifetime = 5f;
 
@@ -31,7 +32,7 @@ public class SkeletonProjectile : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         Debug.Log("Projectile hit: " + other.gameObject.name + " tag: " + other.tag);
-    
+
         if (other.CompareTag("Enemy")) return;
 
         if (other.CompareTag("Player"))

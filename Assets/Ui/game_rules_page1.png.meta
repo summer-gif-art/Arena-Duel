@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e8082b69c4fba03488270d6d52673654
+guid: b03d160d1a4100640bac23cd33a1691f
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,23 +97,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: GameRules 1_0
+      name: game_rules_page1_0
       rect:
         serializedVersion: 2
-        x: 33
-        y: 156
-        width: 991
-        height: 626
+        x: 255
+        y: 84
+        width: 1356
+        height: 921
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7ffa91d27ffa8a849957222ca56a1aae
-      internalID: 1105720203
+      spriteID: 452e24068aee69f418d9663460473282
+      internalID: 904427487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: game_rules_page1_1
+      rect:
+        serializedVersion: 2
+        x: 1853
+        y: 1048
+        width: 57
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91864920b62049946bde3b04ad65cc47
+      internalID: 636878394
       vertices: []
       indices: 
       edges: []
@@ -122,7 +144,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 9324b07611fbcfc4db2a41d336b38e86
+    spriteID: 4b626b70ae492454097153b553e632a5
     internalID: 0
     vertices: []
     indices: 
@@ -132,7 +154,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      GameRules 1_0: 1105720203
+      game_rules_page1_0: 904427487
+      game_rules_page1_1: 636878394
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

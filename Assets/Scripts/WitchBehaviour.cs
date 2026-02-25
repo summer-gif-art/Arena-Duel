@@ -11,14 +11,19 @@ public class WitchAI : MonoBehaviour
     [Header("Movement")]
     public float chaseSpeed = 5f;
     public float circleSpeed = 3f;
+    [SerializeField] private float rotationSmoothing = 8f;
 
     [Header("Aggression")]
     public float lungeDistance = 3f;
     public float lungeSpeed = 10f;
     public float lungeDuration = 0.2f;
-    
+
     [Header("VFX")]
     public GameObject attackVFXPrefab;
+    [SerializeField] private Vector3 attackVFXOffset = Vector3.up;
+
+    [Header("Animation")]
+    [SerializeField] private float emotionResetDelay = 0.5f;
 
     private Transform player;
     private EnemyHealth enemyHealth;
@@ -60,7 +65,7 @@ public class WitchAI : MonoBehaviour
         Vector3 lookDir = player.position - transform.position;
         lookDir.y = 0;
         if (lookDir != Vector3.zero)
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookDir), Time.deltaTime * 8f);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookDir), Time.deltaTime * rotationSmoothing);
 
         if (distance > detectionRange)
         {
@@ -93,8 +98,9 @@ public class WitchAI : MonoBehaviour
 
     void Attack()
     {
-        if (attackVFXPrefab != null)
-            Instantiate(attackVFXPrefab, player.position + Vector3.up, Quaternion.identity);
+        if (attackVFXPrefab != null && player != null)
+            Instantiate(attackVFXPrefab, player.position + attackVFXOffset, Quaternion.identity);
+
         animator?.SetInteger("emotions", 1);
         AudioManager.Instance?.PlayWitchAttack();
 
@@ -102,8 +108,8 @@ public class WitchAI : MonoBehaviour
         if (playerHealth != null)
             playerHealth.TakeDamage(attackDamage);
 
-        // Reset emotions back to 0 after a short delay
-        Invoke(nameof(ResetEmotion), 0.5f);
+        // Reset emotions back to 0 after configured delay
+        Invoke(nameof(ResetEmotion), emotionResetDelay);
     }
 
     void ResetEmotion()

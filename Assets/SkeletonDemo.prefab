@@ -325,7 +325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   preferredDistance: 8
   tooCloseDistance: 2
-  detectionRange: 15
+  detectionRange: 14
   attackCooldown: 2
   attackDamage: 10
   projectilePrefab: {fileID: 2320963933400585440, guid: 4ac45e7c76d36334c8ed486e47e04565, type: 3}

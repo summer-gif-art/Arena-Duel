@@ -30,11 +30,31 @@ public class CombatUIManager : MonoBehaviour
 
     [Header("Fight Sequence")]
     public GameObject readyText;
-    public float readyDuration = 1.5f;
+    [SerializeField] private float readyDuration = 1.5f;
     [HideInInspector] public bool fightSequenceDone = false;
 
-    [Header("Animation Settings")]
-    public float healthBarSmoothSpeed = 5f;
+    [Header("Fight Banner Animation")]
+    [SerializeField] private float punchTime = 0.3f;
+    [SerializeField] private float punchPeakRatio = 0.7f;
+    [SerializeField] private float punchOvershoot = 1.3f;
+    [SerializeField] private int flashCount = 3;
+    [SerializeField] private float flashInterval = 0.1f;
+    [SerializeField] private float bannerHoldTime = 0.5f;
+    [SerializeField] private float bannerFadeDuration = 0.5f;
+
+    [Header("Health Bar Settings")]
+    [SerializeField] private float healthBarSmoothSpeed = 5f;
+    [SerializeField] private float greenThreshold = 0.75f;
+    [SerializeField] private float yellowThreshold = 0.5f;
+    [SerializeField] private float orangeThreshold = 0.25f;
+
+    [Header("End Game")]
+    [SerializeField] private float returnToMenuDelay = 3f;
+    [SerializeField] private string mainMenuScene = "MainMenu";
+
+    [Header("Display Names")]
+    [SerializeField] private string playerDisplayName = "PLAYER";
+    [SerializeField] private string levelPrefix = "LVL ";
 
     [Header("References")]
     public PlayerHealth playerHealth;
@@ -118,23 +138,26 @@ public class CombatUIManager : MonoBehaviour
         }
     }
 
+    // Health bar color gradient using configurable thresholds
     void UpdateHealthColor(Image bar, float percent)
     {
-        if (percent > 0.75f)
-            bar.color = Color.green;
-        else if (percent > 0.5f)
+        if (percent > greenThreshold)
         {
-            float t = (percent - 0.5f) / 0.25f;
+            bar.color = Color.green;
+        }
+        else if (percent > yellowThreshold)
+        {
+            float t = (percent - yellowThreshold) / (greenThreshold - yellowThreshold);
             bar.color = Color.Lerp(Color.yellow, Color.green, t);
         }
-        else if (percent > 0.25f)
+        else if (percent > orangeThreshold)
         {
-            float t = (percent - 0.25f) / 0.25f;
+            float t = (percent - orangeThreshold) / (yellowThreshold - orangeThreshold);
             bar.color = Color.Lerp(new Color(1f, 0.5f, 0f), Color.yellow, t);
         }
         else
         {
-            float t = percent / 0.25f;
+            float t = percent / orangeThreshold;
             bar.color = Color.Lerp(Color.red, new Color(1f, 0.5f, 0f), t);
         }
     }
@@ -149,10 +172,10 @@ public class CombatUIManager : MonoBehaviour
             playerHPText.text = playerHealth.GetCurrentHealth() + " / " + playerHealth.maxHealth;
 
         if (playerNameText != null)
-            playerNameText.text = "PLAYER";
+            playerNameText.text = playerDisplayName;
 
         if (playerLevelText != null)
-            playerLevelText.text = "LVL " + playerHealth.currentPowerLevel;
+            playerLevelText.text = levelPrefix + playerHealth.currentPowerLevel;
     }
 
     public void UpdateEnemyUI()
@@ -188,16 +211,16 @@ public class CombatUIManager : MonoBehaviour
             xpText.text = currentXP + " / " + xpNeeded + " XP";
 
         if (playerLevelText != null)
-            playerLevelText.text = "LVL " + level;
+            playerLevelText.text = levelPrefix + level;
     }
 
     void OnLevelUp(int newLevel)
     {
         if (playerLevelText != null)
-            playerLevelText.text = "LVL " + newLevel;
+            playerLevelText.text = levelPrefix + newLevel;
     }
 
-    // FIGHT SEQUENCE
+    // ---- FIGHT SEQUENCE ----
 
     public void ShowFightBanner()
     {
@@ -228,36 +251,37 @@ public class CombatUIManager : MonoBehaviour
                 Vector3 originalScale = rect.localScale;
                 rect.localScale = Vector3.zero;
 
-                float punchTime = 0.3f;
+                // Punch scale animation
                 float t = 0f;
                 while (t < punchTime)
                 {
                     t += Time.unscaledDeltaTime;
                     float progress = t / punchTime;
-                    float scale = progress < 0.7f
-                        ? Mathf.Lerp(0f, 1.3f, progress / 0.7f)
-                        : Mathf.Lerp(1.3f, 1f, (progress - 0.7f) / 0.3f);
+                    float scale = progress < punchPeakRatio
+                        ? Mathf.Lerp(0f, punchOvershoot, progress / punchPeakRatio)
+                        : Mathf.Lerp(punchOvershoot, 1f, (progress - punchPeakRatio) / (1f - punchPeakRatio));
                     rect.localScale = originalScale * scale;
                     yield return null;
                 }
                 rect.localScale = originalScale;
 
-                for (int i = 0; i < 3; i++)
+                // Flash effect
+                for (int i = 0; i < flashCount; i++)
                 {
                     bannerImage.color = Color.white;
-                    yield return new WaitForSecondsRealtime(0.1f);
+                    yield return new WaitForSecondsRealtime(flashInterval);
                     bannerImage.color = originalColor;
-                    yield return new WaitForSecondsRealtime(0.1f);
+                    yield return new WaitForSecondsRealtime(flashInterval);
                 }
 
-                yield return new WaitForSecondsRealtime(0.5f);
+                // Hold then fade out
+                yield return new WaitForSecondsRealtime(bannerHoldTime);
 
                 float timer = 0f;
-                float fadeDuration = 0.5f;
-                while (timer < fadeDuration)
+                while (timer < bannerFadeDuration)
                 {
                     timer += Time.unscaledDeltaTime;
-                    float alpha = Mathf.Lerp(1f, 0f, timer / fadeDuration);
+                    float alpha = Mathf.Lerp(1f, 0f, timer / bannerFadeDuration);
                     bannerImage.color = new Color(originalColor.r, originalColor.g, originalColor.b, alpha);
                     yield return null;
                 }
@@ -273,7 +297,7 @@ public class CombatUIManager : MonoBehaviour
         Debug.Log("FIGHT!");
     }
 
-    //WIN - LOSE BANNERS
+    // ---- WIN / LOSE BANNERS ----
 
     public void ShowVictoryBanner()
     {
@@ -285,8 +309,7 @@ public class CombatUIManager : MonoBehaviour
         if (victoryBanner != null)
             victoryBanner.SetActive(true);
         Time.timeScale = 0f;
-        if (AudioManager.Instance != null)
-            AudioManager.Instance.StopSFX();
+        AudioManager.Instance?.StopSFX();
         StartCoroutine(AutoReturnToMenu());
         Debug.Log("VICTORY!");
     }
@@ -301,19 +324,17 @@ public class CombatUIManager : MonoBehaviour
         if (defeatBanner != null)
             defeatBanner.SetActive(true);
         Time.timeScale = 0f;
-        if (AudioManager.Instance != null)
-            AudioManager.Instance.StopSFX();
+        AudioManager.Instance?.StopSFX();
         StartCoroutine(AutoReturnToMenu());
         Debug.Log("DEFEAT!");
     }
 
     IEnumerator AutoReturnToMenu()
     {
-        yield return new WaitForSecondsRealtime(3f);
+        yield return new WaitForSecondsRealtime(returnToMenuDelay);
         Time.timeScale = 1f;
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene(mainMenuScene);
     }
-    
 
     public void HideAllBanners()
     {

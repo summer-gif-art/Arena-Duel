@@ -34,6 +34,7 @@ public class EnemySelectionManager : MonoBehaviour
     [Header("Highlight Settings")]
     public Color hoverColor = new Color(1f, 0.8f, 0f, 1f);
     public Color normalColor = new Color(0f, 0f, 0f, 0f);
+    [SerializeField] private Vector2 outlineDistance = new Vector2(5, -5);
 
     [Header("Scene Settings")]
     public string arenaSceneName = "Map";
@@ -43,7 +44,7 @@ public class EnemySelectionManager : MonoBehaviour
         SetHighlight(enemy1Outline, false);
         SetHighlight(enemy2Outline, false);
 
-        // Click listeners - clicking immediately loads map
+        // Click listeners — clicking immediately loads map
         if (enemy1Button != null)
             enemy1Button.onClick.AddListener(() => SelectEnemy(0));
 
@@ -85,6 +86,6 @@ public class EnemySelectionManager : MonoBehaviour
     {
         if (outline == null) return;
         outline.effectColor = active ? hoverColor : normalColor;
-        outline.effectDistance = new Vector2(5, -5);
+        outline.effectDistance = outlineDistance;
     }
 }

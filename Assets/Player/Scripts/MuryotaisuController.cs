@@ -9,6 +9,7 @@ namespace Muryotaisu
     {
         private Animator animator;
         private CharacterController controller;
+        private Camera mainCam; // Cached to avoid FindGameObjectWithTag every frame
         private Vector3 moveDirection = Vector3.zero;
 
         [Header("Movement Settings")]
@@ -18,23 +19,35 @@ namespace Muryotaisu
         public float rotationSpeed = 10f;  // How fast player turns to face movement direction
         public float startKocchi = 2f;     // Distance to camera that triggers wave animation
 
+        [Header("Advanced Tuning")]
+        [SerializeField] private float groundStickForce = 2f;   // Small downward force to keep grounded
+        [SerializeField] private float inputDeadzone = 0.1f;    // Minimum input magnitude to register movement
+        [SerializeField] private float idleAnimDelay = 15f;     // Seconds idle before alternate animation
+
+        [Header("Input Keys")]
+        [SerializeField] private KeyCode jumpKey = KeyCode.Space;
+        [SerializeField] private KeyCode jumpKeyAlt = KeyCode.Return;
+
         [Header("Fight Control")]
         public bool canMove = false; // Locked until ArenaManager starts the fight
 
-        float idleTimer = 0f; // Tracks time standing still for idle animation switch
+        private float idleTimer = 0f; // Tracks time standing still for idle animation switch
 
         void Start()
         {
-            // Get components from this GameObject (Animator is on the root for this character)
             animator = GetComponent<Animator>();
             controller = GetComponent<CharacterController>();
+            mainCam = Camera.main; // Cache once instead of calling every frame
         }
 
         void Update()
         {
             // Wave animation when camera gets very close to player
-            float dist = Vector3.Distance(transform.position, Camera.main.transform.position);
-            animator.SetBool("kocchiFlag", dist < startKocchi);
+            if (mainCam != null)
+            {
+                float dist = Vector3.Distance(transform.position, mainCam.transform.position);
+                animator.SetBool("kocchiFlag", dist < startKocchi);
+            }
 
             // Block all movement input until fight officially starts
             if (!canMove)
@@ -45,7 +58,7 @@ namespace Muryotaisu
                 if (!controller.isGrounded)
                     moveDirection.y -= gravity * Time.deltaTime;
                 else
-                    moveDirection.y = -2f;
+                    moveDirection.y = -groundStickForce;
                 controller.Move(moveDirection * Time.deltaTime);
                 animator.SetBool("walkFlag", false);
                 return;
@@ -53,19 +66,18 @@ namespace Muryotaisu
 
             if (controller.isGrounded)
             {
-                moveDirection.y = -2f; // Small downward force to keep grounded
+                moveDirection.y = -groundStickForce; // Small downward force to keep grounded
 
                 // Read raw input (no smoothing for responsive controls)
                 float horizontal = Input.GetAxisRaw("Horizontal"); // A=-1, D=1
                 float vertical = Input.GetAxisRaw("Vertical");     // S=-1, W=1
 
                 // Calculate movement relative to camera orientation
-                Transform cam = Camera.main.transform;
-                Vector3 camForward = new Vector3(cam.forward.x, 0f, cam.forward.z).normalized;
-                Vector3 camRight = new Vector3(cam.right.x, 0f, cam.right.z).normalized;
+                Vector3 camForward = new Vector3(mainCam.transform.forward.x, 0f, mainCam.transform.forward.z).normalized;
+                Vector3 camRight = new Vector3(mainCam.transform.right.x, 0f, mainCam.transform.right.z).normalized;
                 Vector3 inputDir = (camForward * vertical + camRight * horizontal).normalized;
 
-                bool isMoving = inputDir.magnitude >= 0.1f;
+                bool isMoving = inputDir.magnitude >= inputDeadzone;
 
                 if (isMoving)
                 {
@@ -83,17 +95,17 @@ namespace Muryotaisu
                     moveDirection.x = 0f;
                     moveDirection.z = 0f;
 
-                    // After 15 seconds idle, trigger alternate idle animation
+                    // After configured idle time, trigger alternate idle animation
                     idleTimer += Time.deltaTime;
-                    if (idleTimer >= 15f)
+                    if (idleTimer >= idleAnimDelay)
                     {
                         animator.SetTrigger("idleBFlag");
                         idleTimer = 0f;
                     }
                 }
 
-                // Jump on Space or Enter
-                if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Return))
+                // Jump input
+                if (Input.GetKeyDown(jumpKey) || Input.GetKeyDown(jumpKeyAlt))
                 {
                     moveDirection.y = jumpSpeed;
                     animator.SetBool("jumpFlag", true);

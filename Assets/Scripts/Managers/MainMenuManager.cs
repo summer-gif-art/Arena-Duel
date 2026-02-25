@@ -3,18 +3,23 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
+    [Header("Scene Names")]
+    [SerializeField] private string enemySelectionScene = "EnemySelection";
+    [SerializeField] private string gameRulesScene = "GameRules";
+
     public void StartGame()
     {
-        SceneManager.LoadScene("EnemySelection"); // Or go straight to selection UI
+        SceneManager.LoadScene(enemySelectionScene);
     }
+
     public void OpenGameRules()
     {
-        SceneManager.LoadScene("GameRules");
+        SceneManager.LoadScene(gameRulesScene);
     }
-    
+
     public void QuitGame()
     {
         Application.Quit();
-        Debug.Log("Game Quit"); // For testing in editor
+        Debug.Log("Game Quit");
     }
 }

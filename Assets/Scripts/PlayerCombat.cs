@@ -15,6 +15,12 @@ public class PlayerCombat : MonoBehaviour
     public float dodgeDuration = 0.3f;
     public float dodgeCooldown = 1f;
 
+    [Header("Input Keys")]
+    [SerializeField] private KeyCode blockKey = KeyCode.LeftShift;
+    [SerializeField] private KeyCode attackKey = KeyCode.Space;
+    [SerializeField] private KeyCode dodgeKey = KeyCode.Q;
+    [SerializeField] private bool attackOnLeftClick = true; // Also attack on mouse left click
+
     [Header("References")]
     public Transform attackPoint;
     public LayerMask enemyLayer;
@@ -40,7 +46,7 @@ public class PlayerCombat : MonoBehaviour
 
     void Update()
     {
-        // Dont process input when game is paused (fight banner etc)
+        // Don't process input when game is paused (fight banner etc)
         if (Time.timeScale == 0f) return;
 
         // Handle dodge movement
@@ -49,8 +55,6 @@ public class PlayerCombat : MonoBehaviour
             dodgeTimer -= Time.deltaTime;
             if (characterController != null)
                 characterController.Move(dodgeDirection * dodgeSpeed * Time.deltaTime);
-            else
-                transform.Translate(dodgeDirection * dodgeSpeed * Time.deltaTime, Space.World);
 
             if (dodgeTimer <= 0f)
             {
@@ -60,26 +64,25 @@ public class PlayerCombat : MonoBehaviour
             return;
         }
 
-        // BLOCK: Hold Left Shift - play sound only when block STARTS
+        // BLOCK: Hold configured key — play sound only when block STARTS
         bool wasBlocking = isBlocking;
-        isBlocking = Input.GetKey(KeyCode.LeftShift);
+        isBlocking = Input.GetKey(blockKey);
         if (isBlocking && !wasBlocking)
         {
-            AudioManager.Instance?.PlayBlock(); // only plays once when shift is first pressed
+            AudioManager.Instance?.PlayBlock();
             Debug.Log("Blocking!");
         }
 
-        // ATTACK: Space or Left Click
-        if (!isBlocking &&
-            (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) &&
-            Time.time >= nextAttackTime)
+        // ATTACK: Configured key or left click
+        bool attackInput = Input.GetKeyDown(attackKey) || (attackOnLeftClick && Input.GetMouseButtonDown(0));
+        if (!isBlocking && attackInput && Time.time >= nextAttackTime)
         {
             Attack();
             nextAttackTime = Time.time + attackCooldown;
         }
 
-        // DODGE: Press Q
-        if (Input.GetKeyDown(KeyCode.Q) && Time.time >= nextDodgeTime)
+        // DODGE: Configured key
+        if (Input.GetKeyDown(dodgeKey) && Time.time >= nextDodgeTime)
         {
             Dodge();
             nextDodgeTime = Time.time + dodgeCooldown;
@@ -88,7 +91,7 @@ public class PlayerCombat : MonoBehaviour
 
     void Attack()
     {
-        if (attackVFXPrefab != null)
+        if (attackVFXPrefab != null && attackPoint != null)
             Instantiate(attackVFXPrefab, attackPoint.position, Quaternion.identity);
         Debug.Log("Player attacked!");
         GameEvents.PlayerAttack();

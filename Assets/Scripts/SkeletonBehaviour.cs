@@ -16,6 +16,10 @@ public class SkeletonAI : MonoBehaviour
     [Header("Movement")]
     public float moveSpeed = 3f;
     public float retreatSpeed = 4f;
+    [SerializeField] private float rotationSmoothing = 5f;
+
+    [Header("Projectile")]
+    [SerializeField] private float projectileSpawnHeight = 2f;
 
     private Transform player;
     private float nextAttackTime = 0f;
@@ -46,7 +50,7 @@ public class SkeletonAI : MonoBehaviour
         Vector3 lookDir = player.position - transform.position;
         lookDir.y = 0;
         if (lookDir != Vector3.zero)
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookDir), Time.deltaTime * 5f);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(lookDir), Time.deltaTime * rotationSmoothing);
 
         isMoving = false;
 
@@ -79,6 +83,7 @@ public class SkeletonAI : MonoBehaviour
             nextAttackTime = Time.time + attackCooldown;
         }
 
+        // Keep skeleton grounded at fixed Y
         transform.position = new Vector3(transform.position.x, fixedY, transform.position.z);
     }
 
@@ -89,7 +94,7 @@ public class SkeletonAI : MonoBehaviour
 
         if (projectilePrefab != null)
         {
-            Vector3 spawnPos = transform.position + Vector3.up * 2f;
+            Vector3 spawnPos = transform.position + Vector3.up * projectileSpawnHeight;
             GameObject proj = Instantiate(projectilePrefab, spawnPos, Quaternion.identity);
             SkeletonProjectile projScript = proj.GetComponent<SkeletonProjectile>();
             if (projScript != null)
