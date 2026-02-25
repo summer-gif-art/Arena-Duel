@@ -37,13 +37,15 @@ public class AudioManager : MonoBehaviour
     [Range(0f, 1f)] public float sfxVolume = 1f;
 
     [Header("SFX Spam Prevention")]
-    [SerializeField] private float attackSoundCooldown = 0.4f; // Minimum seconds between attack sounds
+    [SerializeField] private float attackSoundCooldown = 0.4f;   // Minimum seconds between player attack sounds
+    [SerializeField] private float enemySoundCooldown = 1.5f;    // Minimum seconds between enemy attack sounds
 
-    private AudioSource musicSource; // Dedicated source for looping background music
-    private AudioSource sfxSource;   // Dedicated source for one-shot sound effects
-    private float lastAttackSoundTime = 0f;    // Tracks last time player attack sound played
-    private float lastSkeletonSoundTime = 0f;  // Tracks last time skeleton attack sound played
-    private float lastWitchSoundTime = 0f;     // Tracks last time witch attack sound played
+    private AudioSource musicSource;
+    private AudioSource sfxSource;
+    private AudioSource enemySfxSource; // Separate source for enemy sounds — new sound cuts off the old one
+    private float lastAttackSoundTime = 0f;
+    private float lastSkeletonSoundTime = 0f;
+    private float lastWitchSoundTime = 0f;
 
     void Awake()
     {
@@ -66,6 +68,10 @@ public class AudioManager : MonoBehaviour
 
         sfxSource = gameObject.AddComponent<AudioSource>();
         sfxSource.volume = sfxVolume;
+
+        // Separate AudioSource for enemy sounds — plays one at a time (no stacking)
+        enemySfxSource = gameObject.AddComponent<AudioSource>();
+        enemySfxSource.volume = sfxVolume;
 
         // Subscribe to events in Awake (not Start) so they only register once
         GameEvents.OnPlayerAttack += PlayPlayerAttack;
@@ -125,28 +131,46 @@ public class AudioManager : MonoBehaviour
     public void PlayFightBanner() => PlaySFX(fightBannerSound);
     public void PlayWitchAttack()
     {
-        if (Time.time - lastWitchSoundTime < attackSoundCooldown) return;
+        if (Time.time - lastWitchSoundTime < enemySoundCooldown) return;
         lastWitchSoundTime = Time.time;
-        PlaySFX(witchAttackSound);
+        PlayEnemySFX(witchAttackSound);
     }
 
     public void PlaySkeletonAttack()
     {
-        if (Time.time - lastSkeletonSoundTime < attackSoundCooldown) return;
+        if (Time.time - lastSkeletonSoundTime < enemySoundCooldown) return;
         lastSkeletonSoundTime = Time.time;
-        PlaySFX(skeletonAttackSound);
+        PlayEnemySFX(skeletonAttackSound);
     }
     public void PlayProjectileHit() => PlaySFX(projectileHitSound);
     public void PlayBlock() => PlaySFX(blockSound);
     public void PlayDodge() => PlaySFX(dodgeSound);
-    public void StopSFX() => sfxSource.Stop();
+    public void StopSFX()
+    {
+        sfxSource.Stop();
+        enemySfxSource.Stop();
+    }
 
-    // Core SFX method — now actually uses sfxVolume (was hard-coded to 1f before)
+    // Core SFX method — plays any clip once without interrupting other sounds
     void PlaySFX(AudioClip clip)
     {
         if (clip != null)
             sfxSource.PlayOneShot(clip, sfxVolume);
         else
             Debug.LogWarning("PlaySFX called but clip is NULL!");
+    }
+
+    // Enemy SFX — each new enemy sound stops the previous one so they never stack
+    void PlayEnemySFX(AudioClip clip)
+    {
+        if (clip != null)
+        {
+            enemySfxSource.Stop();
+            enemySfxSource.clip = clip;
+            enemySfxSource.volume = sfxVolume;
+            enemySfxSource.Play();
+        }
+        else
+            Debug.LogWarning("PlayEnemySFX called but clip is NULL!");
     }
 }
