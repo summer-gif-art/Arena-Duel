@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3bb93ce0-0e42-4413-a88e-5f40cfe67fde" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Arena-Duel/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Arena-Duel/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Player/Scripts/MuryotaisuController.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Player/Scripts/MuryotaisuController.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/GameRules.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/GameRules.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Managers/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Managers/AudioManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/SkeletonBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/SkeletonBehaviour.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +143,7 @@
       <workItem from="1771922453162" duration="5553000" />
       <workItem from="1771930290246" duration="354000" />
       <workItem from="1772037913984" duration="4946000" />
-      <workItem from="1772047457423" duration="2228000" />
+      <workItem from="1772047457423" duration="3335000" />
     </task>
     <servers />
   </component>
